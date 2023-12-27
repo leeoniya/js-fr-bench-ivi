@@ -1375,7 +1375,7 @@ function appStateReducer(state, action) {
   }
 }
 const dispatch = eventDispatcher("dispatch");
-const _tpl_ = /*@__PURE__ @__IVI_TPL__(click)*/_T(_h("<tr><td class=\"col-md-1\"></td><td class=\"col-md-4\"><a></a></td><td class=\"col-md-1\"><a><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a></td><td class=\"col-md-6\"></td></tr>"), 4, [1, 512, 521, 1024, 22, 537, 1536, 38], EMPTY_ARRAY, [1, 10, 1, 10, 1]);
+const _tpl_ = /*@__PURE__ @__IVI_TPL__(click)*/_T(_h("<tr><td class=\"col-md-1\"></td><td class=\"col-md-4\"><a></a></td><td class=\"col-md-1\"><a><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></a></td><td class=\"col-md-6\"></td></tr>"), 132, [1, 1024, 22, 1536, 38], [11, 12, 7, 4], [1, 10, 1, 10, 1]);
 const Row = /*@__PURE__*/component(c => {
   const onSelect = () => {
     dispatch(c, {
@@ -1394,7 +1394,7 @@ const Row = /*@__PURE__*/component(c => {
     selected
   }) => _t(_tpl_, [selected === true ? "danger" : "", entry.id, onSelect, entry.label, onRemove]);
 });
-const _tpl_2 = /*@__PURE__ @__IVI_TPL__(id,click)*/_T(_hN("<div class=\"col-sm-6 smallpad\"><button class=\"btn btn-primary btn-block\" type=\"button\"></button></div>"), 2, [512, 1026, 14, 529], EMPTY_ARRAY, [1]);
+const _tpl_2 = /*@__PURE__ @__IVI_TPL__(id,click)*/_T(_hN("<div class=\"col-sm-6 smallpad\"><button class=\"btn btn-primary btn-block\" type=\"button\"></button></div>"), 66, [512, 1026, 14], [7, 8], [1]);
 const Button = (text, id, onClick) => /* preventClone */_t(_tpl_2, [id, onClick, text]);
 const _TPL_FACTORY = _hE("tbody");
 const _tpl_3 = /*@__PURE__ @__IVI_TPL__()*/_T(_TPL_FACTORY, 65, EMPTY_ARRAY, [0], EMPTY_ARRAY);

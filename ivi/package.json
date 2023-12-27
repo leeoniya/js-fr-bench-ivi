@@ -18,7 +18,7 @@
     "build-prod": "rollup -c rollup.config.mjs"
   },
   "dependencies": {
-    "@ivi/tpl": "3.0.1",
+    "@ivi/htm": "3.0.2",
     "ivi": "3.0.2"
   },
   "devDependencies": {
