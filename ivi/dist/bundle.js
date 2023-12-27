@@ -38,24 +38,29 @@ const elementAddEventListener = elementProto.addEventListener;
 const elementRemoveEventListener = elementProto.removeEventListener;
 /** `Object.getOwnPropertyDescriptor(o, p)` */
 const getDescriptor = (o, p) => _Object.getOwnPropertyDescriptor(o, p);
-/** `Node.prototype.getFirstChild` */
-const nodeGetFirstChild = getDescriptor(nodeProto, "firstChild").get;
-/** `Node.prototype.getLastChild` */
+/** `get Node.prototype.firstChild` */
+const nodeGetFirstChild = /*@__PURE__*/getDescriptor(nodeProto, "firstChild").get;
+/** `get Node.prototype.lastChild` */
+/*@__PURE__*/
 getDescriptor(nodeProto, "lastChild").get;
-/** `Node.prototype.getNextSibling` */
-const nodeGetNextSibling = getDescriptor(nodeProto, "nextSibling").get;
-/** `Node.prototype.getPrevSibling` */
+/** `get Node.prototype.nextSibling` */
+const nodeGetNextSibling = /*@__PURE__*/getDescriptor(nodeProto, "nextSibling").get;
+/** `get Node.prototype.previousSibling` */
+/*@__PURE__*/
 getDescriptor(nodeProto, "previousSibling").get;
-/** `Node.prototype.setTextContent` */
-const nodeSetTextContent = getDescriptor(nodeProto, "textContent").set;
-/** `Element.prototype.setInnerHTML` */
-const elementSetInnerHTML = getDescriptor(elementProto, "innerHTML").set;
-/** `Element.prototype.className` */
-const elementSetClassName = getDescriptor(elementProto, "className").set;
-/** `HTMLElement.prototype.style`. */
-const htmlElementGetStyle = getDescriptor(HTMLElement.prototype, "style").get;
-/** `SVGElement.prototype.style` */
-const svgElementGetStyle = getDescriptor(SVGElement.prototype, "style").get;
+/** `set Node.prototype.textContent` */
+const nodeSetTextContent = /*@__PURE__*/getDescriptor(nodeProto, "textContent").set;
+/** `get Node.prototype.nodeType` */
+/*@__PURE__*/
+getDescriptor(nodeProto, "nodeType").get;
+/** `set Element.prototype.innerHTML` */
+const elementSetInnerHTML = /*@__PURE__*/getDescriptor(elementProto, "innerHTML").set;
+/** `set Element.prototype.className` */
+const elementSetClassName = /*@__PURE__*/getDescriptor(elementProto, "className").set;
+/** `get HTMLElement.prototype.style`. */
+const htmlElementGetStyle = /*@__PURE__*/getDescriptor(HTMLElement.prototype, "style").get;
+/** `get SVGElement.prototype.style` */
+const svgElementGetStyle = /*@__PURE__*/getDescriptor(SVGElement.prototype, "style").get;
 // When object is sealed and stored in a const variable, JIT compiler can
 // eliminate object map(shape) checks when accessing its properties.
 /**
@@ -124,10 +129,10 @@ const _updateTemplateProperties = (currentElement, opCodes, data, state, prevPro
                 elementSetClassName.call(currentElement, "");
               }
             } else if (dataIndex === 1 /* CommonPropType.TextContent */) {
-              if (next != null && next !== "" && next !== false) {
+              if (next !== "" && next != null && next !== false) {
                 if (prev == null || prev === "" || prev === false) {
                   nodeSetTextContent.call(currentElement, next);
-                } else if (next != null || next !== "") {
+                } else {
                   nodeGetFirstChild.call(currentElement).nodeValue = next;
                 }
               } else if (prev != null && prev !== "" && prev !== false) {
@@ -353,7 +358,6 @@ const _update = (parentSNode, sNode, next, updateFlags) => {
     if (prevProps.v !== nextProps.v) {
       updateFlags |= 512 /* Flags.ForceUpdate */;
     }
-
     sNode.c = _update(sNode, children, nextProps.c, updateFlags);
   }
   return sNode;
@@ -1426,17 +1430,15 @@ const App = /*@__PURE__*/component(c => {
       type: 4 /* ActionType.SwapRows */
     });
   })];
-
   return () => {
     const {
       data,
       selected
     } = _state();
-    return (/* preventClone */_t(_tpl_5, [buttons, onDispatch, data.length ? _t(_tpl_3, [List(data, getEntryId, entry => Row({
-        entry,
-        selected: selected === entry.id
-      }))]) : _t(_tpl_4)])
-    );
+    return /* preventClone */_t(_tpl_5, [buttons, onDispatch, data.length ? _t(_tpl_3, [List(data, getEntryId, entry => Row({
+      entry,
+      selected: selected === entry.id
+    }))]) : _t(_tpl_4)]);
   };
 });
 update(

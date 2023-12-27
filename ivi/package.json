@@ -18,16 +18,16 @@
     "build-prod": "rollup -c rollup.config.mjs"
   },
   "dependencies": {
-    "@ivi/tpl": "3.0.0",
-    "ivi": "3.0.0"
+    "@ivi/tpl": "3.0.1",
+    "ivi": "3.0.2"
   },
   "devDependencies": {
-    "tslib": "2.5.0",
-    "typescript": "5.0.4",
-    "rollup": "3.20.2",
-    "@rollup/plugin-node-resolve": "15.0.2",
-    "@rollup/plugin-terser": "0.4.0",
-    "@rollup/plugin-typescript": "11.1.0",
-    "@ivi/rollup-plugin": "3.0.2"
+    "tslib": "2.6.2",
+    "typescript": "5.3.3",
+    "rollup": "4.9.1",
+    "@rollup/plugin-node-resolve": "15.2.3",
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "11.1.5",
+    "@ivi/rollup-plugin": "3.0.4"
   }
 }
