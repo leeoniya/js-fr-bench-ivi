@@ -28,5 +28,5 @@ export default {
   watch: {
     clearScreen: false,
   },
-  plugins: [nodeResolve(), typescript(), ivi({}), terser(TERSER_OPTIONS)],
+  plugins: [nodeResolve(), typescript(), ivi({})], // terser(TERSER_OPTIONS)
 };
